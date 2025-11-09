@@ -1,176 +1,235 @@
-# Social Platform – React + Vite + Supabase + Web3
+# 🌐 Social Platform — React + Vite + Supabase + Web3
 
-A modern social network with posts, communities, real-time chat, services marketplace, events, donations, crypto wallet integration, and multi-language support.
-
----
-
-## Features
-- **React 18** + **Vite** (fast HMR)
-- **Supabase**: Auth, Realtime DB, Storage
-- **Tailwind CSS** (responsive, utility-first)
-- **i18next** (multi-language: EN, UA, etc.)
-- **MetaMask / WalletConnect** (Web3 login & donations)
-- **Row Level Security (RLS)** for data privacy
-- **Realtime**: chat, notifications, typing indicators
+A modern, full-featured **social network** with posts, communities, real-time chat, events, donations, services marketplace, and **Web3 crypto wallet integration** — all powered by **React + Vite + Supabase**.
 
 ---
 
-## Project Structure
+## 🚀 Tech Stack
+
+| Category | Technology |
+|-----------|-------------|
+| Frontend | React 18 + Vite |
+| Backend | Supabase (Auth, DB, Realtime, Storage) |
+| Styling | Tailwind CSS |
+| Localization | i18next (multi-language support) |
+| Web3 | MetaMask / WalletConnect |
+| Security | RLS (Row-Level Security) |
+| Hosting | Vercel / Netlify |
+
+---
+
+## 🧭 Features
+
+- 🔐 **Supabase Auth** (email, OAuth, wallet login)
+- 💬 **Realtime chat** & notifications
+- 🌍 **Multi-language support** (EN, UA, etc.)
+- 💸 **Crypto donations** via MetaMask / WalletConnect
+- ⚙️ **User privacy** with Row-Level Security (RLS)
+- 🧩 **Communities, posts, services, and events**
+- 📱 **Responsive UI** built with Tailwind CSS
+- 🧠 **Modular structure** for scalability
+
+---
+
+## 📁 Project Structure
+
+<details>
+<summary>Click to view full structure</summary>
 
 /hrpdao
-├── node_modules/               # Project dependencies
-├── public/                     # Static assets (optional)
-│   └── favicon.ico             # Site icon (if available)
-├── src/                        # Source code
-│   ├── assets/                 # Static resources (images, fonts)
-│   ├── components/             # React components
-│   │   ├── Feed.jsx            # News feed component
-│   │   ├── Signup.jsx          # Registration/login page component
-│   │   ├── PostForm.jsx        # Post creation component
-│   │   ├── Chat.jsx            # Chat component
-│   │   ├── Community.jsx       # Community creation component
-│   │   ├── Country.jsx         # All countries list component
-│   │   ├── Notifications.jsx   # Notifications component ?
-│   │   ├── Profile.jsx         # User profile component
-│   │   ├── Services.jsx        # Services component
-│   │   ├── Settings.jsx        # Settings component
-│   │   ├── CountryDetail.jsx   # Individual country component
-│   │   ├── Sidebar.jsx         # Menu component
-│   │   ├── LanguageSelector.jsx# Language selection component
-│   │   ├── WalletConnect.jsx   # Crypto wallet connection component
-│   │   ├── ComplaintForm.jsx   # Complaint/suggestion component
-│   │   ├── DonationSection.jsx # Donations component
-│   │   ├── SocialFeed.jsx      # Social network feed component
-│   │   ├── ServiceDetails.jsx  # Services details component
-│   │   ├── AddService.jsx      # Services adding component
-│   │   ├── Message.jsx         # Messages component
-│   │   ├── Events.jsx          # Community events component
-│   │   ├── Navbar.jsx          # Navigation panel component
-│   ├── pages/                  # Pages
-│   │   ├── Terms.jsx           # Terms and policy page
-│   │   ├── CommunityDetail.jsx # Community page
-│   │
-│   ├── utils/                  # Utilities
-│   │   ├── supabase.js         # Supabase configuration
-│   │   ├── web3.js             # Web3 configuration (MetaMask)
-│   │   └── countries.js        # Complete list of all world countries
-│   ├── App.jsx                 # Main component with routing
-│   ├── index.css               # Tailwind CSS styles
-│   ├── main.jsx                # React entry point
-│   └── i18n.js                 # Localization setup (i18next)
-├── .env                        # Environment variables (Supabase URL and key)
-├── .gitignore                  # Git ignored files
-├── package.json                # Dependencies and scripts
-├── postcss.config.js           # PostCSS configuration
-├── tailwind.config.js          # Tailwind CSS configuration
-├── vite.config.js              # Vite configuration
-└── index.html                  # Home page
+├── node_modules/
+├── public/
+│ └── favicon.ico
+├── src/
+│ ├── assets/ # Images, fonts, static assets
+│ ├── components/ # Reusable UI components
+│ │ ├── Feed.jsx
+│ │ ├── Signup.jsx
+│ │ ├── PostForm.jsx
+│ │ ├── Chat.jsx
+│ │ ├── Community.jsx
+│ │ ├── Country.jsx
+│ │ ├── Notifications.jsx
+│ │ ├── Profile.jsx
+│ │ ├── Services.jsx
+│ │ ├── Settings.jsx
+│ │ ├── CountryDetail.jsx
+│ │ ├── Sidebar.jsx
+│ │ ├── Navbar.jsx
+│ │ ├── WalletConnect.jsx
+│ │ ├── DonationSection.jsx
+│ │ ├── Events.jsx
+│ │ ├── ComplaintForm.jsx
+│ │ ├── AddService.jsx
+│ │ └── Message.jsx
+│ ├── pages/
+│ │ ├── Terms.jsx
+│ │ └── CommunityDetail.jsx
+│ ├── utils/
+│ │ ├── supabase.js
+│ │ ├── web3.js
+│ │ └── countries.js
+│ ├── App.jsx
+│ ├── i18n.js
+│ ├── main.jsx
+│ └── index.css
+├── supabase/
+│ ├── migrations/
+│ │ └── 001_init_tables.sql
+│ └── seed.sql
+├── .env.example
+├── .gitignore
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── vite.config.js
+└── index.html
 
+yaml
+Copy code
 
-Quick Start (For New Developers)
+</details>
 
-Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-Install dependencies
+---
+
+## ⚡ Quick Start
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/your-username/social-platform.git
+cd social-platform
+2️⃣ Install Dependencies
+bash
+Copy code
 npm install
-Set up environment variables
+3️⃣ Setup Environment Variables
+bash
+Copy code
 cp .env.example .env
+Edit .env:
 
-Open .env and replace with your Supabase project values:
+ini
+Copy code
 VITE_SUPABASE_URL=https://your-project.supabase.co
 VITE_SUPABASE_KEY=your-anon-key-here
-Setting Up Supabase (Required)
-Each developer must create their own Supabase project
-→ Same schema, different data → no conflicts
-Step 1: Create Supabase Project
+⚠️ Never commit .env — .env.example is safe to share.
 
+🧩 Supabase Setup
+Step 1: Create a Supabase Project
 Go to https://app.supabase.com
-Click "New Project"
-Fill:
 
-Project name (e.g., social-app-dev)
+Click New Project
+
+Add:
+
+Project name: social-platform-dev
+
 Database password
-Region
 
+Choose region
 
-Wait ~2 minutes
+Wait 2–3 minutes for setup
 
 Step 2: Get Keys
-
-Go to Settings → API
-Copy:
+Go to Settings → API and copy:
 
 Project URL → VITE_SUPABASE_URL
+
 anon public key → VITE_SUPABASE_KEY
 
+🚫 Never use service_role key in frontend
 
-
-Never use service_role key in frontend
-Database Setup (Same Schema for All)
+🧱 Database Setup
 Option 1: Automatic (Recommended)
-Install Supabase CLI
+bash
+Copy code
 npm install -g supabase
-Login and link project
 supabase login
 supabase link --project-ref YOUR_PROJECT_REF
-Reset DB with full schema + test data
 supabase db reset
 Option 2: Manual
-
 Open Supabase → SQL Editor
-Paste content from:
-supabase/migrations/001_init_tables.sql
-Run
 
-Run the App
-npm run dev
-Open: http://localhost:5173
-Environment Variables (.env.example)
-.env.example — Copy to .env and fill YOUR values
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_KEY=your-anon-key-here
-Never commit .env
-.env.example is safe to share
-Database Schema
+Paste supabase/migrations/001_init_tables.sql
 
-Full schema in: supabase/migrations/001_init_tables.sql
-Test data in: supabase/seed.sql
-Tables: users, posts, chats, communities, services, events, etc.
-RLS policies for privacy
-Indexes for performance
+Run → ✅ Schema setup complete!
 
-Scripts
-npm run dev        # Start dev server
-npm run build      # Build for production
-npm run preview    # Preview build
-npm run db:reset   # Reset DB + seed data
-Deployment
+🧠 Developer Scripts
+Command	Description
+npm run dev	Start dev server
+npm run build	Build for production
+npm run preview	Preview production build
+npm run db:reset	Reset DB + seed data
 
-Vercel (recommended)
+🚀 Deployment
+Recommended:
+Vercel
+
 Netlify
 
-Add in project settings:
+Add in Environment Variables:
 
+nginx
+Copy code
 VITE_SUPABASE_URL
 VITE_SUPABASE_KEY
+🔐 Security
+.env is gitignored
 
-Security
+Only anon key used client-side
 
-.env is in .gitignore
-Only anon key used in frontend
-Isolated DB per developer
-RLS protects user data
+RLS (Row Level Security) protects user data
 
-For Developers
+Each developer has isolated DB project
 
-Use supabase db reset to get fresh DB with test data
-All migrations are versioned
-Seed includes: users, posts, chats, events
+🤝 Contributing
+We welcome contributions from everyone 💙
+
+Steps to Contribute
+Fork the repo
+
+Create a new branch:
+
+bash
+Copy code
+git checkout -b feature/your-feature-name
+Commit your changes:
+
+bash
+Copy code
+git commit -m "Add your feature"
+Push to your fork:
+
+bash
+Copy code
+git push origin feature/your-feature-name
+Open a Pull Request 🎉
+
+Guidelines
+Use clear commit messages
+
+Keep PRs small & focused
+
+Follow existing code style
+
+Test before submitting
+
+🧑‍💻 For Developers
+Run supabase db reset for fresh schema + seed data
+
+Migrations are versioned for collaboration
+
+Test data includes: users, posts, chats, and events
+
 Wallet: MetaMask only (no private keys)
 
-Need Help?
+📚 Resources
+Supabase Docs
 
-Open an issue
-Supabase Docs: https://supabase.com/docs
-Vite Docs: https://vitejs.dev
+Vite Docs
+
+Tailwind CSS Docs
+
+i18next Docs
+
+Ethers.js Docs
